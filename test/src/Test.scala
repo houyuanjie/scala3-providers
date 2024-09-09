@@ -20,14 +20,14 @@ class UserDatabase(pool: ConnectionPool):
     .runQuery(s"insert into subscribers(name, email) values ${user.name} ${user.email}")
 
 object UserDatabase:
-  def apply()(using Provider[(ConnectionPool)]): UserDatabase = new UserDatabase(provided[ConnectionPool])
+  def apply()(using Provider[ConnectionPool]): UserDatabase = new UserDatabase(provided[ConnectionPool])
 
 class ConnectionPool(n: Int):
   def get(): Connection =
     println(s"Acquired connection")
     Connection()
 
-class Connection():
+class Connection:
   def runQuery(query: String): Unit = println(s"Executing query: $query")
 
 // https://github.com/scala/scala3/blob/main/tests/run/Providers.scala
