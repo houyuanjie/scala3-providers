@@ -3,6 +3,12 @@ package build
 import mill._
 import mill.scalalib._
 
-object `package` extends RootModule with ScalaModule {
+trait AnyScalaModule extends ScalaModule {
   def scalaVersion = "3.5.0"
+}
+
+object core extends AnyScalaModule
+
+object test extends AnyScalaModule {
+  def moduleDeps = Seq(core)
 }
