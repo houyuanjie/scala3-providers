@@ -134,7 +134,7 @@ if not exist "%MILL%" (
     set DOWNLOAD_FILE=%MILL%.tmp
 
     if [!DOWNLOAD_FROM_MAVEN!]==[1] (
-        set DOWNLOAD_URL=https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/!MILL_VERSION!/mill-dist-!MILL_VERSION!.jar
+        set DOWNLOAD_URL=https://maven.aliyun.com/repository/central/com/lihaoyi/mill-dist/!MILL_VERSION!/mill-dist-!MILL_VERSION!.jar
     ) else (
         set DOWNLOAD_URL=!GITHUB_RELEASE_CDN!%MILL_REPO_URL%/releases/download/!MILL_VERSION_TAG!/!MILL_VERSION!!DOWNLOAD_SUFFIX!
     )
