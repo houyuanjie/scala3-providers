@@ -10,5 +10,5 @@ trait AnyScalaModule extends ScalaModule {
 object core extends AnyScalaModule
 
 object test extends AnyScalaModule {
-  def moduleDeps = Seq(core)
+  override def moduleDeps = Seq(core)
 }
