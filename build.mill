@@ -4,7 +4,7 @@ import mill._
 import mill.scalalib._
 
 trait AnyScalaModule extends ScalaModule {
-  def scalaVersion = "3.5.0"
+  def scalaVersion = "3.5.1"
 }
 
 object core extends AnyScalaModule
