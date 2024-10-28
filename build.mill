@@ -2,8 +2,9 @@ package build
 
 import mill._
 import mill.scalalib._
+import mill.scalalib.scalafmt.ScalafmtModule
 
-trait AnyScalaModule extends ScalaModule {
+trait AnyScalaModule extends ScalaModule with ScalafmtModule {
   def scalaVersion = "3.5.2"
 }
 
